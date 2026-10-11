@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 92" role="img" aria-labelledby="title">
+  <title id="title">Malimtech</title>
+  <defs>
+    <radialGradient id="orb" cx="35%" cy="30%" r="70%">
+      <stop offset="0" stop-color="#ffe89a"/>
+      <stop offset=".55" stop-color="#f4ae24"/>
+      <stop offset="1" stop-color="#d98500"/>
+    </radialGradient>
+  </defs>
+  <circle cx="36" cy="46" r="18" fill="url(#orb)"/>
+  <text x="65" y="59" font-family="Arial, sans-serif" font-size="34" font-weight="600" font-style="italic" letter-spacing="2" fill="#161616">MALIMTECH</text>
+</svg>

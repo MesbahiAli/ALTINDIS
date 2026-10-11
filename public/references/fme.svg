@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 112" role="img" aria-labelledby="title">
+  <title id="title">FME</title>
+  <circle cx="54" cy="56" r="34" fill="none" stroke="#2aa8b8" stroke-width="4"/>
+  <path d="M35 67c7-23 18-35 36-39-10 9-15 20-13 33 2 11 8 18 17 23-19-1-33-6-40-17z" fill="#2aa8b8"/>
+  <text x="101" y="52" font-family="Arial, sans-serif" font-size="31" font-weight="700" fill="#2598ae">FME</text>
+  <text x="101" y="70" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#2598ae">FÉDÉRATION MAROCAINE</text>
+  <text x="101" y="84" font-family="Arial, sans-serif" font-size="9" fill="#4a7180">POUR L'ENTREPRISE ET L'EMPLOI</text>
+</svg>

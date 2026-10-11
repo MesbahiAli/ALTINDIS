@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 130" role="img" aria-labelledby="title">
+  <title id="title">CASV Transports SA</title>
+  <path d="M48 53c36-26 103-35 177-21" fill="none" stroke="#f2a525" stroke-width="3"/>
+  <path d="M52 57c46-18 107-23 173-14" fill="none" stroke="#0a9bcd" stroke-width="3"/>
+  <text x="150" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" font-weight="700" font-style="italic" letter-spacing="-4" fill="#1288bb">CASV</text>
+  <text x="150" y="101" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.3" fill="#5d6c7a">TRANSPORTS S.A.</text>
+  <text x="150" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-style="italic" fill="#e9931d">Pour vous simplifier la ville</text>
+</svg>
