@@ -73,7 +73,7 @@ export default function HomeHero() {
           <p className="homeHeroLead">Nous révélons les compétences qui font progresser durablement les organisations marocaines.</p>
           <div className="homeHeroActions">
             <Link href="/#expertises" className="homeHeroPrimaryAction"><span>Découvrir nos expertises</span><ArrowIcon /></Link>
-            <Link href="/contact" className="homeHeroSecondaryAction"><span>Parler à un consultant</span><ArrowIcon /></Link>
+            <Link href="/#contact" className="homeHeroSecondaryAction"><span>Parler à un consultant</span><ArrowIcon /></Link>
           </div>
         </div>
 

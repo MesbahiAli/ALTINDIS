@@ -2,20 +2,19 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 const expertiseLinks = [
-  { href: "/recrutement", label: "Recrutement", description: "Identifier et attirer les talents qui font la différence." },
-  { href: "/formation", label: "Formations sur mesure", description: "Développer des compétences directement opérationnelles." },
-  { href: "/accompagnement", label: "Études & diagnostics", description: "Éclairer les décisions RH et organisationnelles." },
-  { href: "/accompagnement", label: "Accompagnement projets", description: "Structurer et sécuriser les projets de transformation." },
+  { href: "/#recrutement", label: "Recrutement", description: "Identifier et attirer les talents qui font la différence." },
+  { href: "/#formation", label: "Formations sur mesure", description: "Développer des compétences directement opérationnelles." },
+  { href: "/#diagnostics", label: "Études & diagnostics", description: "Éclairer les décisions RH et organisationnelles." },
+  { href: "/#accompagnement", label: "Accompagnement projets", description: "Structurer et sécuriser les projets de transformation." },
 ] as const;
 
 const primaryLinks = [
-  { href: "/recrutement", label: "Recrutement" },
-  { href: "/formation", label: "Formation" },
-  { href: "/accompagnement", label: "Accompagnement" },
+  { href: "/#recrutement", label: "Recrutement" },
+  { href: "/#formation", label: "Formation" },
+  { href: "/#accompagnement", label: "Accompagnement" },
   { href: "/#a-propos", label: "Le cabinet" },
 ] as const;
 
@@ -37,7 +36,6 @@ function GlobeIcon() {
 }
 
 export default function Header() {
-  const pathname = usePathname();
   const desktopMenuRef = useRef<HTMLDetailsElement>(null);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -48,8 +46,6 @@ export default function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => setMenuOpen(false), [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -76,8 +72,6 @@ export default function Header() {
     return () => document.removeEventListener("pointerdown", closeDesktopMenu);
   }, []);
 
-  const isExpertiseRoute = expertiseLinks.some(({ href }) => href === pathname);
-
   return (
     <>
       <a className="skipLink" href="#main-content">Aller au contenu principal</a>
@@ -91,7 +85,10 @@ export default function Header() {
             </div>
             <div className="headerUtilityRight">
               <span className="headerLocale"><GlobeIcon /> Français · Maroc</span>
-              <Link href="/contact" className="headerUtilityCta">Nous contacter <ArrowIcon /></Link>
+              <div className="headerActionPair">
+                <Link href="/contact" className="headerAction headerActionContact">Contact us <span><ChevronIcon /></span></Link>
+                <Link href="/submit-cv" className="headerAction headerActionCv">Submit CV <span><ChevronIcon /></span></Link>
+              </div>
             </div>
           </div>
         </div>
@@ -104,7 +101,7 @@ export default function Header() {
 
             <nav className="desktopNav" aria-label="Navigation principale">
               <details className="navDropdown" ref={desktopMenuRef}>
-                <summary className={`navLink${isExpertiseRoute ? " navLinkCurrent" : ""}`}>
+                <summary className="navLink">
                   Nos expertises <ChevronIcon />
                 </summary>
                 <div className="navDropdownPanel">
@@ -120,7 +117,7 @@ export default function Header() {
                   </div>
                 </div>
               </details>
-              {primaryLinks.map((link) => <Link href={link.href} className={`navLink${pathname === link.href ? " navLinkCurrent" : ""}`} key={link.label}>{link.label}</Link>)}
+              {primaryLinks.map((link) => <Link href={link.href} className="navLink" key={link.label}>{link.label}</Link>)}
             </nav>
 
             <button type="button" className="mobileMenuButton" aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"} aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen((open) => !open)}>
@@ -131,7 +128,7 @@ export default function Header() {
 
         <div className="mobileNavigation" id="mobile-navigation" aria-hidden={!menuOpen} inert={menuOpen ? undefined : true}>
           <nav className="container mobileNavigationInner" aria-label="Navigation mobile">
-            <details className="mobileExpertise" open={isExpertiseRoute || undefined}>
+            <details className="mobileExpertise">
               <summary><span>Nos expertises</span><ChevronIcon /></summary>
               <div className="mobileExpertiseLinks">
                 {expertiseLinks.map((link, index) => (
@@ -142,7 +139,10 @@ export default function Header() {
             {primaryLinks.map((link) => (
               <Link href={link.href} className="mobileNavLink" key={link.label} onClick={() => setMenuOpen(false)}><span>{link.label}</span><ArrowIcon /></Link>
             ))}
-            <Link href="/contact" className="mobileContactLink" onClick={() => setMenuOpen(false)}><span>Nous contacter</span><ArrowIcon /></Link>
+            <div className="headerActionPair mobileActionPair">
+              <Link href="/contact" className="headerAction headerActionContact" onClick={() => setMenuOpen(false)}>Contact us <span><ChevronIcon /></span></Link>
+              <Link href="/submit-cv" className="headerAction headerActionCv" onClick={() => setMenuOpen(false)}>Submit CV <span><ChevronIcon /></span></Link>
+            </div>
           </nav>
         </div>
       </header>

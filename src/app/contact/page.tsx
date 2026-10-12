@@ -1,46 +1,18 @@
 import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Contact",
-  description: "Contactez ALTINDIS à Casablanca pour vos besoins en recrutement, formation et accompagnement.",
-};
-
+import Link from "next/link";
+import EnquiryForm from "@/components/EnquiryForm";
+export const metadata: Metadata = { title: "Contact", description: "Contactez ALTINDIS pour vos projets." };
 export default function ContactPage() {
-  return (
-    <>
-      <section className="pageHero contactHero">
-        <div className="container contactHeroGrid">
-          <div>
-            <p className="eyebrow eyebrowLight">Contact</p>
-            <h1>Parlons de vos besoins et de vos objectifs.</h1>
-          </div>
-          <p className="pageHeroLead">
-            Recrutement, formation ou accompagnement : contactez directement l’équipe ALTINDIS pour présenter votre besoin.
-          </p>
-        </div>
-      </section>
-
-      <section className="section contactSection">
-        <div className="container contactGrid">
-          <article className="contactCard contactCardPrimary">
-            <p className="eyebrow eyebrowLight">Email</p>
-            <a href="mailto:Contact@Altindis.ma" className="bigContactLink">Contact@Altindis.ma</a>
-            <p>Pour une demande commerciale, une mission ou une prise de contact.</p>
-          </article>
-
-          <article className="contactCard">
-            <p className="eyebrow">Téléphone</p>
-            <a href="tel:+212661386782" className="bigContactLink">+212 6 61 38 67 82</a>
-            <a href="tel:+212655555292" className="bigContactLink">+212 6 55 55 52 92</a>
-          </article>
-
-          <article className="contactCard">
-            <p className="eyebrow">Adresse</p>
-            <h2>59 Boulevard Zerktouni</h2>
-            <p>6ème étage · 20360 Casablanca · Maroc</p>
-          </article>
-        </div>
-      </section>
-    </>
-  );
+  return <>
+    <section className="enquiryHero"><div className="container enquiryHeroInner"><p className="eyebrow eyebrowLight">Contact ALTINDIS</p><h1>Parlons de vos projets.</h1><p>Recrutement, formation ou accompagnement : construisons ensemble une solution pour votre organisation.</p></div></section>
+    <section className="enquirySection"><div className="container enquiryContainer">
+      <EnquiryForm />
+      <div className="enquiryDetails">
+        <div><h3>Email</h3><a href="mailto:Contact@Altindis.ma">Contact@Altindis.ma</a></div>
+        <div><h3>Téléphone</h3><a href="tel:+212661386782">+212 6 61 38 67 82</a><br /><a href="tel:+212655555292">+212 6 55 55 52 92</a></div>
+        <div><h3>Casablanca</h3><p>59 Boulevard Zerktouni<br />6ème étage, 20360 Casablanca, Maroc</p></div>
+      </div>
+      <p className="enquiryCrossLink">Vous souhaitez nous transmettre votre candidature ? <Link href="/submit-cv">Déposer votre CV →</Link></p>
+    </div></section>
+  </>;
 }

@@ -9,57 +9,57 @@ const expertisePillars = [
     icon: "recruitment",
     title: "Recrutement",
     text: "Recherche et évaluation de dirigeants, managers, ingénieurs, cadres et non-cadres, selon les besoins de chaque organisation.",
-    href: "/recrutement",
-    image: "/images/hero-slide-01.png",
+    id: "recrutement",
+    image: "/images/expertise-recrutement.png",
   },
   {
     icon: "training",
     title: "Formations sur mesure",
     text: "Des parcours participatifs construits autour de vos métiers, de votre culture et de vos objectifs.",
-    href: "/formation",
-    image: "/images/hero-slide-02.png",
+    id: "formation",
+    image: "/images/expertise-formation.png",
   },
   {
     icon: "diagnostics",
     title: "Études & Diagnostics",
     text: "Une analyse approfondie pour identifier les priorités et éclairer vos décisions organisationnelles.",
-    href: "/accompagnement",
-    image: "/images/hero-slide-03.png",
+    id: "diagnostics",
+    image: "/images/expertise-diagnostics.png",
   },
   {
     icon: "support",
     title: "Accompagnement projets",
-    text: "Un appui à vos projets de développement, de transformation et d’amélioration des performances.",
-    href: "/accompagnement",
-    image: "/images/hero-slide-04.png",
+    text: "Démarrage de projets, investissements, stratégie de développement, amélioration des performances, QHSE et certification, achats et supply chain : un appui adapté aux dimensions de votre projet.",
+    id: "accompagnement",
+    image: "/images/expertise-accompagnement.png",
   },
 ] as const;
 
-const strengths = [
-  { number: "01", title: "Expertise métier", text: "Comprendre vos fonctions et leurs enjeux." },
-  { number: "02", title: "Éthique", text: "Agir avec confidentialité et objectivité." },
-  { number: "03", title: "Performance", text: "Viser des résultats durables et utiles." },
-] as const;
-
 const themes = [
-  "Management & Leadership",
-  "Ressources Humaines",
-  "Communication",
-  "Commercial & Vente",
-  "Marketing & Veille",
-  "Achats & Supply Chain",
-  "Production & Maintenance",
-  "QHSE & Finance",
+  { category: "Les équipes", title: "Faire grandir les personnes", description: "Renforcer les pratiques managériales et la collaboration au quotidien.", topics: ["Management, Leadership & Efficacité", "Gestion des Ressources Humaines", "Communication personnelle & interpersonnelle", "Communication d’entreprise"], image: "/images/expertise-formation.png" },
+  { category: "Le développement", title: "Développer votre dynamique commerciale", description: "Relier les compétences de vos équipes à vos objectifs de développement.", topics: ["Commercial & Force de Vente", "Marketing & Veille", "Gestion de la Relation Client", "Achats & Commerce International"], image: "/images/hero-wide-02.png" },
+  { category: "Les opérations", title: "Renforcer les savoir-faire métiers", description: "Construire des apprentissages adaptés aux réalités du terrain.", topics: ["Approvisionnement & Logistique", "Production & Maintenance", "Qualité, Hygiène, Sécurité & Environnement", "Finance & Gestion"], image: "/images/expertise-diagnostics.png" },
 ] as const;
 
 const sectorHighlights = [
-  "Énergie & Pétrochimie",
-  "Industrie & Manufacture",
-  "BTP & Infrastructure",
-  "Distribution & Commerce",
-  "Finance & Services",
-  "Technologie & Digital",
+  { title: "Énergie & Pétrochimie", text: "Opérations, ingénierie et métiers de l’énergie.", icon: "energy" },
+  { title: "Industrie & Manufacture", text: "Production, maintenance et qualité industrielle.", icon: "industry" },
+  { title: "BTP & Infrastructure", text: "Construction, études et conduite de projets.", icon: "building" },
+  { title: "Distribution & Commerce", text: "Vente, achats et développement commercial.", icon: "commerce" },
+  { title: "Finance & Services", text: "Finance, gestion et fonctions de support.", icon: "finance" },
+  { title: "Technologie & Digital", text: "Systèmes d’information et métiers du numérique.", icon: "digital" },
 ] as const;
+
+function SectorIcon({ name }: { name: (typeof sectorHighlights)[number]["icon"] }) {
+  return <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+    {name === "energy" && <><path d="m26 5-15 22h12l-1 16 15-23H25l1-15Z" /><path d="M8 10H5v7M40 31h3v7" /></>}
+    {name === "industry" && <><path d="M6 41V23l12-7v9l12-7v23H6ZM30 41V8h7l5 33H30M12 32h3M21 32h3M12 37h3M21 37h3" /><path d="M31 14h7" /></>}
+    {name === "building" && <><path d="M9 41V14l19-7v34M28 20h11v21M5 41h38M16 17h5M16 24h5M16 31h5M33 27h2M33 33h2M16 41v-4h5v4" /></>}
+    {name === "commerce" && <><path d="M8 20h32v21H8V20ZM5 20l5-13h28l5 13M5 20c0 5 8 5 8 0 0 5 8 5 8 0 0 5 8 5 8 0 0 5 8 5 8 0 0 5 6 5 6 0M13 7l-2 13M21 7v13M29 7l2 13M15 41V29h10v12M31 29h4v6h-4" /></>}
+    {name === "finance" && <><path d="m5 17 19-11 19 11H5ZM8 41h32M5 36h38M12 22v14M24 22v14M36 22v14" /><circle cx="24" cy="13" r="1.5" /></>}
+    {name === "digital" && <><rect x="12" y="12" width="24" height="24" rx="4" /><path d="M18 5v7M24 5v7M30 5v7M18 36v7M24 36v7M30 36v7M5 18h7M5 24h7M5 30h7M36 18h7M36 24h7M36 30h7m-14-10-4 4 4 4m-10-8 4 4-4 4" /></>}
+  </svg>;
+}
 
 function ExpertiseIcon({ name }: { name: (typeof expertisePillars)[number]["icon"] }) {
   if (name === "recruitment") {
@@ -81,22 +81,32 @@ export default function HomePage() {
       <References />
 
       <section className="aboutOverview" id="a-propos" aria-labelledby="about-overview-title">
-        <div className="homeSectionInner aboutOverviewGrid">
-          <div className="aboutOverviewCopy">
+        <div className="homeSectionInner aboutInspiredInner">
+          <div className="aboutOverviewHeading">
             <p className="eyebrow">À propos d’ALTINDIS</p>
-            <h2 id="about-overview-title">Un partenaire de confiance pour vos enjeux humains</h2>
-            <p>ALTINDIS accompagne les organisations dans leurs enjeux de recrutement, de formation et de développement des compétences. Notre approche associe connaissance des métiers, écoute et exigence de qualité.</p>
-            <Link href="/contact" className="aboutOverviewLink">Échanger avec ALTINDIS <span aria-hidden="true">→</span></Link>
+            <h2 id="about-overview-title">Un partenaire de confiance<br />pour vos enjeux humains</h2>
+            <p className="aboutInspiredDescription">Nous accompagnons les organisations dans leurs besoins de recrutement, de formation et de développement des compétences. Notre approche : comprendre vos réalités et construire avec vous des solutions adaptées, dans le respect de la confidentialité, de l’objectivité et du secret professionnel.</p>
+            <Link href="/#contact" className="aboutOverviewLink">Parlons de vos enjeux <span aria-hidden="true">→</span></Link>
           </div>
-          <div className="aboutOverviewStrengths" aria-label="Nos engagements">
-            {strengths.map((strength) => (
-              <div className="aboutStrength" key={strength.title}>
-                <span className="aboutStrengthNumber">{strength.number}</span>
-                <h3>{strength.title}</h3>
-                <p>{strength.text}</p>
-              </div>
-            ))}
-          </div>
+          <ul className="aboutInspiredValues" aria-label="Nos engagements">
+            <li>
+              <span className="aboutValueIcon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 29V22a16 16 0 0 1 32 0v7" /><rect x="6" y="27" width="8" height="14" rx="2" /><rect x="34" y="27" width="8" height="14" rx="2" /></svg></span>
+              <h3>Écoute</h3><p>Comprendre vos besoins</p>
+            </li>
+            <li>
+              <span className="aboutValueIcon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 13h34M7 24h34M7 35h34" /><rect x="15" y="9" width="6" height="8" rx="2" fill="currentColor" stroke="none" /><rect x="29" y="20" width="6" height="8" rx="2" fill="currentColor" stroke="none" /><rect x="11" y="31" width="6" height="8" rx="2" fill="currentColor" stroke="none" /></svg></span>
+              <h3>Sur mesure</h3><p>Adapter chaque solution</p>
+            </li>
+            <li>
+              <span className="aboutValueIcon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="18" cy="15" r="7" /><path d="M5 40v-5a13 13 0 0 1 26 0v5M32 9a7 7 0 0 1 0 14M36 28a12 12 0 0 1 7 11" /></svg></span>
+              <h3>Proximité</h3><p>Avancer à vos côtés</p>
+            </li>
+            <li>
+              <span className="aboutValueIcon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m24 5 16 6v12c0 10-9 17-16 21C17 40 8 33 8 23V11l16-6Z" /><path d="m16 24 6 6 11-12" /></svg></span>
+              <h3>Éthique</h3><p>Agir avec intégrité et déontologie</p>
+            </li>
+          </ul>
+          <blockquote className="aboutInspiredQuote">« Faire grandir<br />les talents pour un<br />Maroc plus fort. »<cite>Notre ambition</cite></blockquote>
         </div>
       </section>
 
@@ -109,7 +119,7 @@ export default function HomePage() {
           </div>
           <div className="expertiseOverviewGrid">
             {expertisePillars.map((service) => (
-              <article className="expertiseOverviewCard" key={service.title}>
+              <article className="expertiseOverviewCard" id={service.id} key={service.title}>
                 <div className="expertiseCardMedia">
                   <Image src={service.image} alt="" fill sizes="(max-width: 640px) 92vw, (max-width: 1080px) 45vw, 24vw" />
                 </div>
@@ -118,7 +128,6 @@ export default function HomePage() {
                   <div className="expertiseCardCopy">
                     <h3>{service.title}</h3>
                     <p>{service.text}</p>
-                    <Link href={service.href} className="expertiseCardLink">En savoir plus <span aria-hidden="true">→</span></Link>
                   </div>
                 </div>
               </article>
@@ -131,49 +140,63 @@ export default function HomePage() {
         <div className="homeSectionInner homeImpactGrid">
           <div>
             <p className="eyebrow eyebrowLight">Notre engagement</p>
-            <h2 id="home-impact-title">Des résultats durables pour les organisations</h2>
+            <h2 id="home-impact-title">Faire grandir les talents et les organisations</h2>
           </div>
-          <div className="homeImpactItems">
-            <p>Recruter avec justesse</p>
-            <p>Développer les compétences</p>
-            <p>Accompagner le changement</p>
-          </div>
+          <ul className="homeImpactItems">
+            <li>
+              <h3>Recruter avec justesse</h3>
+              <p>Des profils en phase avec vos enjeux.</p>
+            </li>
+            <li>
+              <h3>Développer les compétences</h3>
+              <p>Des parcours adaptés à vos équipes.</p>
+            </li>
+            <li>
+              <h3>Accompagner le changement</h3>
+              <p>Un appui ancré dans vos réalités.</p>
+            </li>
+          </ul>
         </div>
       </section>
 
-      <section className="homeSectors" aria-labelledby="home-sectors-title">
+      <section className="homeSectors sectorsEditorial" id="secteurs" aria-labelledby="home-sectors-title">
         <div className="homeSectionInner homeSectorsGrid">
           <div className="homeSectorsIntro">
             <p className="eyebrow">Secteurs d’activité</p>
-            <h2 id="home-sectors-title">Une expertise sectorielle au service de vos ambitions</h2>
-            <p>Nos missions de recrutement s’appuient sur une compréhension des métiers et des réalités de chaque secteur.</p>
-            <Link href="/recrutement" className="homeTrainingLink">Découvrir notre approche <span aria-hidden="true">→</span></Link>
+            <h2 id="home-sectors-title">Vos métiers.<br />Notre attention.</h2>
+            <p>Chaque secteur a ses exigences. Nous prenons le temps de comprendre votre environnement pour identifier les compétences dont vous avez besoin.</p>
+            <Link href="/contact" className="homeTrainingLink">Parlons de votre secteur <span aria-hidden="true">→</span></Link>
           </div>
           <div className="homeSectorsCards">
-            {sectorHighlights.map((sector, index) => (
-              <div className="homeSectorCard" key={sector}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <strong>{sector}</strong>
-              </div>
+            {sectorHighlights.map((sector) => (
+              <article className="sectorEditorialCard" key={sector.icon}>
+                <div className="sectorEditorialIcon"><SectorIcon name={sector.icon} /></div>
+                <h3>{sector.title}</h3>
+                <p>{sector.text}</p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="homeTraining" aria-labelledby="home-training-title">
-        <div className="homeSectionInner homeTrainingGrid">
+      <section className="homeTraining trainingEditorial" id="formations" aria-labelledby="home-training-title">
+        <div className="homeSectionInner">
           <div className="homeTrainingIntro">
             <p className="eyebrow">Formation</p>
-            <h2 id="home-training-title">Des thématiques au plus près des réalités opérationnelles</h2>
-            <p>Des actions pensées autour de la performance individuelle et collective, selon le contexte, les besoins et les contraintes de chaque client.</p>
-            <Link href="/formation" className="homeTrainingLink">Explorer la formation <span aria-hidden="true">→</span></Link>
+            <h2 id="home-training-title">Des compétences qui prennent vie sur le terrain.</h2>
+            <p>Des formations sur mesure, construites autour de vos métiers, de vos équipes et de vos objectifs.</p>
           </div>
-          <div className="homeTrainingThemes">
-            {themes.map((theme, index) => (
-              <div className="homeTrainingTheme" key={theme}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <strong>{theme}</strong>
-              </div>
+          <div className="trainingEditorialGrid">
+            {themes.map((theme) => (
+              <article className="trainingEditorialCard" key={theme.category}>
+                <div className="trainingEditorialMedia"><Image src={theme.image} alt="" fill sizes="(max-width: 640px) 92vw, (max-width: 1080px) 45vw, 30vw" /></div>
+                <div className="trainingEditorialBody">
+                  <span className="trainingCategory">{theme.category}</span>
+                  <h3>{theme.title}</h3>
+                  <p>{theme.description}</p>
+                  <ul>{theme.topics.map((topic) => <li key={topic}>{topic}</li>)}</ul>
+                </div>
+              </article>
             ))}
           </div>
         </div>

@@ -20,9 +20,9 @@ export default function Footer() {
 
         <div>
           <p className="footerTitle">Expertises</p>
-          <Link href="/recrutement">Recrutement</Link>
-          <Link href="/formation">Formation</Link>
-          <Link href="/accompagnement">Accompagnement</Link>
+          <Link href="/#recrutement">Recrutement</Link>
+          <Link href="/#formation">Formation</Link>
+          <Link href="/#accompagnement">Accompagnement</Link>
         </div>
 
         <div>
