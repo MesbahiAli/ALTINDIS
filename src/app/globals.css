@@ -539,11 +539,11 @@ p { font-weight: 500; }
   box-shadow: 0 8px 22px rgba(16, 26, 58, 0.04);
   scroll-margin-top: 150px;
 }
-.expertiseCardMedia { position: relative; height: 160px; overflow: hidden; background: #e8ecf4; }
-.expertiseCardMedia img { object-fit: cover; object-position: center 15%; }
+.expertiseCardMedia { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: #e8ecf4; }
+.expertiseCardMedia img { object-fit: cover; object-position: center; }
 #formation .expertiseCardMedia img,
-#accompagnement .expertiseCardMedia img { object-position: center top; }
-#diagnostics .expertiseCardMedia img { object-position: center 60%; }
+#accompagnement .expertiseCardMedia img { object-position: center; }
+#diagnostics .expertiseCardMedia img { object-position: center; }
 .expertiseCardBody { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; flex: 1; padding: 20px; }
 .expertiseIcon {
   display: grid;
@@ -974,7 +974,7 @@ p { font-weight: 500; }
   .expertiseOverview { padding: 54px 0 64px; }
   .expertiseOverviewTitle { font-size: 34px; }
   .expertiseOverviewGrid { grid-template-columns: 1fr; gap: 10px; }
-  .expertiseCardMedia { height: 170px; }
+  .expertiseCardMedia { aspect-ratio: 4 / 3; }
   .homeImpact { padding: 48px 0; }
   .homeImpactItems { grid-template-columns: 1fr; }
   .homeImpactItems li { padding: 16px 0; border-top: 1px solid rgba(255, 255, 255, 0.2); border-left: 0; }
@@ -1303,6 +1303,8 @@ p { font-weight: 500; }
 .trainingEditorialCard { display: flex; flex-direction: column; min-width: 0; overflow: hidden; border-radius: 12px; background: #fff; }
 .trainingEditorialMedia { position: relative; aspect-ratio: 1.9; overflow: hidden; }
 .trainingEditorialMedia img { object-fit: cover; }
+.trainingEditorialMedia img[src*="expertise-formation-casablanca"] { object-position: center 25%; }
+.trainingEditorialMedia img[src*="expertise-diagnostics-casablanca"] { object-position: center top; }
 .trainingEditorialBody { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 26px; }
 .trainingCategory { padding: 6px 12px; border-radius: 30px; background: var(--brand-light); color: var(--brand); font-size: 12px; font-weight: 500; margin-bottom: 18px; }
 .trainingEditorialCard h3 { margin: 0 0 16px; color: var(--ink); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(25px,2vw,31px); font-weight: 400; line-height: 1.2; letter-spacing: -.025em; }
@@ -1328,6 +1330,29 @@ p { font-weight: 500; }
   .trainingEditorialMedia { min-height: 0; aspect-ratio: 1.8; }
   .trainingEditorialBody { padding: 24px; }
   .trainingEditorialCard h3 { font-size: 28px; }
+}
+
+/* Training approach: presentation content in the supplied numbered layout. */
+.trainingApproach { padding: clamp(64px, 7vw, 112px) 0; background: #030f35; color: #fff; }
+.trainingApproachGrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(48px, 8vw, 140px); align-items: start; }
+.trainingApproachIntro h2 { margin: 0 0 32px; color: #fff; font-size: clamp(42px, 4.5vw, 72px); font-weight: 750; letter-spacing: -.055em; line-height: 1.08; }
+.trainingApproachIntro p { max-width: 590px; margin: 0 0 24px; color: #fff; font-size: clamp(16px, 1.3vw, 20px); line-height: 1.8; font-weight: 400; }
+.trainingApproachIntro p:last-child { margin-bottom: 0; }
+.trainingApproachSteps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px 48px; margin: 0; padding: 0; list-style: none; }
+.trainingApproachSteps li { min-width: 0; }
+.trainingApproachNumber { display: flex; align-items: center; gap: 24px; margin-bottom: 22px; }
+.trainingApproachNumber span { color: #fff; font-size: clamp(48px, 4.5vw, 72px); line-height: 1; font-weight: 750; letter-spacing: -.05em; }
+.trainingApproachNumber::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,.32); }
+.trainingApproachSteps h3 { margin: 0 0 12px; color: #fff; font-size: clamp(18px, 1.5vw, 23px); font-weight: 650; line-height: 1.4; letter-spacing: -.025em; }
+.trainingApproachSteps p { margin: 0; color: #e1e6f3; font-size: clamp(15px, 1.2vw, 18px); font-weight: 400; line-height: 1.75; }
+@media (max-width: 900px) {
+  .trainingApproachGrid { grid-template-columns: 1fr; gap: 44px; }
+  .trainingApproachIntro p { max-width: 680px; }
+}
+@media (max-width: 540px) {
+  .trainingApproachSteps { grid-template-columns: 1fr; gap: 32px; }
+  .trainingApproachNumber { margin-bottom: 16px; }
+  .trainingApproachIntro h2 { margin-bottom: 24px; }
 }
 
 /* Compact training methodology, retaining the three editorial cards. */

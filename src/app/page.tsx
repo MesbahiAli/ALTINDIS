@@ -10,35 +10,35 @@ const expertisePillars = [
     title: "Recrutement",
     text: "Recherche et évaluation de dirigeants, managers, ingénieurs, cadres et non-cadres, selon les besoins de chaque organisation.",
     id: "recrutement",
-    image: "/images/expertise-recrutement.png",
+    image: "/images/expertise-recrutement-casablanca.png",
   },
   {
     icon: "training",
     title: "Formations sur mesure",
     text: "Des parcours participatifs construits autour de vos métiers, de votre culture et de vos objectifs.",
     id: "formation",
-    image: "/images/expertise-formation.png",
+    image: "/images/expertise-formation-casablanca.png",
   },
   {
     icon: "diagnostics",
     title: "Études & Diagnostics",
     text: "Une analyse approfondie pour identifier les priorités et éclairer vos décisions organisationnelles.",
     id: "diagnostics",
-    image: "/images/expertise-diagnostics.png",
+    image: "/images/expertise-diagnostics-casablanca.png",
   },
   {
     icon: "support",
     title: "Accompagnement projets",
     text: "Démarrage de projets, investissements, stratégie de développement, amélioration des performances, QHSE et certification, achats et supply chain : un appui adapté aux dimensions de votre projet.",
     id: "accompagnement",
-    image: "/images/expertise-accompagnement.png",
+    image: "/images/expertise-accompagnement-casablanca.png",
   },
 ] as const;
 
 const themes = [
-  { category: "Les équipes", title: "Faire grandir les personnes", description: "Renforcer les pratiques managériales et la collaboration au quotidien.", topics: ["Management, Leadership & Efficacité", "Gestion des Ressources Humaines", "Communication personnelle & interpersonnelle", "Communication d’entreprise"], image: "/images/expertise-formation.png" },
+  { category: "Les équipes", title: "Faire grandir les personnes", description: "Renforcer les pratiques managériales et la collaboration au quotidien.", topics: ["Management, Leadership & Efficacité", "Gestion des Ressources Humaines", "Communication personnelle & interpersonnelle", "Communication d’entreprise"], image: "/images/expertise-formation-casablanca.png" },
   { category: "Le développement", title: "Développer votre dynamique commerciale", description: "Relier les compétences de vos équipes à vos objectifs de développement.", topics: ["Commercial & Force de Vente", "Marketing & Veille", "Gestion de la Relation Client", "Achats & Commerce International"], image: "/images/hero-wide-02.png" },
-  { category: "Les opérations", title: "Renforcer les savoir-faire métiers", description: "Construire des apprentissages adaptés aux réalités du terrain.", topics: ["Approvisionnement & Logistique", "Production & Maintenance", "Qualité, Hygiène, Sécurité & Environnement", "Finance & Gestion"], image: "/images/expertise-diagnostics.png" },
+  { category: "Les opérations", title: "Renforcer les savoir-faire métiers", description: "Construire des apprentissages adaptés aux réalités du terrain.", topics: ["Approvisionnement & Logistique", "Production & Maintenance", "Qualité, Hygiène, Sécurité & Environnement", "Finance & Gestion"], image: "/images/expertise-diagnostics-casablanca.png" },
 ] as const;
 
 const sectorHighlights = [
@@ -199,6 +199,29 @@ export default function HomePage() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+      <section className="trainingApproach" id="notre-demarche" aria-labelledby="training-approach-title">
+        <div className="homeSectionInner trainingApproachGrid">
+          <div className="trainingApproachIntro">
+            <h2 id="training-approach-title">Notre démarche</h2>
+            <p>Les enjeux des actions de formation sont étroitement liés à la performance individuelle et collective.</p>
+            <p>Une démarche centrée sur les besoins réels, la culture et les objectifs de nos partenaires, pour plus d’efficacité sur le long terme.</p>
+          </div>
+          <ol className="trainingApproachSteps">
+            {[
+              ["Diagnostic préliminaire", "Focus sur les besoins réels, la culture et les objectifs fixés de nos partenaires."],
+              ["Ingénierie de formation", "Un accompagnement solide en amont pour plus d’efficacité sur le long terme."],
+              ["Approche participative et personnalisée", "Tenant compte du contexte, des besoins et des contraintes du client."],
+              ["Méthodologie", "Des méthodes pédagogiques performantes, des recommandations justes et des plans d’actions réalistes et mesurables."],
+            ].map(([title, description], index) => (
+              <li key={title}>
+                <div className="trainingApproachNumber" aria-hidden="true"><span>{index + 1}</span></div>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
       <Cta />
