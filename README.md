@@ -12,6 +12,10 @@ A clean Next.js / TypeScript website prepared from the ALTINDIS presentation and
 
 ## Run locally
 
+The header includes a FR / EN language switch. French remains the default; English pages are available at `/en`, `/en/recruitment`, `/en/training`, `/en/consulting`, `/en/contact`, and `/en/submit-cv`. Switching languages opens the matching page and preserves the current section anchor.
+
+French routes live in `src/app/(french)` and English routes in `src/app/(english)/en`. Both versions share the same stylesheet and images. English UI components live in `src/components/en`; keep their copy in sync when changing the French version.
+
 ```bash
 npm install
 npm run dev

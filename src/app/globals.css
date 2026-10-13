@@ -1332,6 +1332,50 @@ p { font-weight: 500; }
   .trainingEditorialCard h3 { font-size: 28px; }
 }
 
+/* Language selector: compact trigger and a floating bilingual palette. */
+.languageSwitch { display: inline-flex; align-items: center; flex-shrink: 0; }
+.languageDropdown { position: relative; }
+.languageTrigger { display: flex; align-items: center; gap: 9px; min-height: 38px; padding: 8px 11px; border: 1px solid rgba(255,255,255,.16); border-radius: 8px; color: #fff; background: rgba(255,255,255,.04); cursor: pointer; list-style: none; font-size: 12px; font-weight: 650; white-space: nowrap; transition: background .18s ease, border-color .18s ease; }
+.languageTrigger::-webkit-details-marker { display: none; }
+.languageTrigger:hover, .languageDropdown[open] .languageTrigger { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.38); }
+.languageTranslateIcon { width: 18px; height: 18px; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.languageTrigger .languageFlag { display: none; }
+.languageFlag { display: inline-flex; flex-shrink: 0; width: 24px; height: 24px; overflow: hidden; border-radius: 50%; box-shadow: 0 0 0 1px rgba(17,27,60,.09); }
+.languageFlag svg { display: block; width: 100%; height: 100%; }
+.languageCurrentCode { display: none; }
+.languageChevron { width: 10px; height: 7px; margin-left: 4px; stroke: currentColor; stroke-width: 1.7; transition: transform .18s ease; }
+.languageDropdown[open] .languageChevron { transform: rotate(180deg); }
+.languageSwitchOptions { position: absolute; top: calc(100% + 12px); right: 0; z-index: 110; width: 216px; padding: 8px; background: #fff; border: 1px solid #e4e5ef; border-radius: 12px; box-shadow: 0 16px 48px rgba(6,15,43,.2); }
+.languageSwitchOptions::before { content: ''; position: absolute; top: -5px; right: 22px; width: 9px; height: 9px; background: #fff; border-left: 1px solid #e4e5ef; border-top: 1px solid #e4e5ef; transform: rotate(45deg); }
+.languageDropdownLabel { margin: 0; padding: 9px 10px 12px; color: #7a8095; font-size: 10px; font-weight: 500; letter-spacing: .025em; }
+.languageSwitchOptions a { display: flex; align-items: center; gap: 12px; min-height: 58px; padding: 10px 12px; color: var(--ink); border-radius: 7px; transition: background .18s ease, color .18s ease; }
+.languageSwitchOptions a:hover { background: #f1effb; color: var(--brand); }
+.languageSwitchOptions a[aria-current="page"] { background: var(--brand); color: #fff; }
+.languageSwitchOptions a[aria-current="page"]:hover { background: var(--brand-hover); }
+.languageOptionName { display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 650; }
+.languageOptionName small { font-size: 9px; font-weight: 500; letter-spacing: .08em; opacity: .65; }
+.languageCheck { width: 16px; height: 16px; margin-left: auto; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.languageTrigger:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.languageSwitchOptions a:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+.languageSwitchOptions a[aria-current="page"]:focus-visible { outline-color: #8e81df; }
+@media (prefers-reduced-motion: no-preference) {
+  .languageDropdown[open] .languageSwitchOptions { animation: languageReveal .18s ease-out; }
+  @keyframes languageReveal { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+}
+@media (prefers-reduced-motion: reduce) { .languageTrigger, .languageChevron, .languageSwitchOptions a { transition: none; } }
+@media (max-width: 640px) {
+  .languageTranslateIcon, .languageCurrentName { display: none; }
+  .languageTrigger .languageFlag, .languageCurrentCode { display: inline-flex; }
+  .languageTrigger { gap: 6px; padding: 6px 8px; min-height: 36px; font-size: 11px; }
+  .languageTrigger .languageFlag { width: 17px; height: 17px; }
+  .languageChevron { width: 8px; margin-left: 0; }
+  .languageSwitchOptions { width: 204px; left: 0; right: auto; }
+  .languageSwitchOptions::before { left: 22px; right: auto; }
+  .headerUtilityRight { gap: 12px; }
+  .headerUtilityRight .headerActionPair { gap: 6px; }
+  .headerUtilityRight .headerAction { padding-inline: 10px; font-size: 11px; }
+}
+
 /* Training approach: presentation content in the supplied numbered layout. */
 .trainingApproach { padding: clamp(64px, 7vw, 112px) 0; background: #030f35; color: #fff; }
 .trainingApproachGrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(48px, 8vw, 140px); align-items: start; }

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import LanguageSwitch from "@/components/LanguageSwitch";
 import { useEffect, useRef, useState } from "react";
 
 const expertiseLinks = [
@@ -84,7 +85,7 @@ export default function Header() {
               <a href="tel:+212661386782">+212 6 61 38 67 82</a>
             </div>
             <div className="headerUtilityRight">
-              <span className="headerLocale"><GlobeIcon /> Français · Maroc</span>
+              <LanguageSwitch />
               <div className="headerActionPair">
                 <Link href="/contact" className="headerAction headerActionContact">Contact us <span><ChevronIcon /></span></Link>
                 <Link href="/submit-cv" className="headerAction headerActionCv">Submit CV <span><ChevronIcon /></span></Link>
