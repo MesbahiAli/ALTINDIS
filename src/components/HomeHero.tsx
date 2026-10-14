@@ -70,10 +70,10 @@ export default function HomeHero() {
             <span>au service d’un Maroc</span>
             <span>qui avance.</span>
           </h1>
-          <p className="homeHeroLead">Nous révélons les compétences qui font progresser durablement les organisations marocaines.</p>
+          <p className="homeHeroLead">Recrutement, formation sur mesure et accompagnement des organisations au Maroc.</p>
           <div className="homeHeroActions">
-            <Link href="/#expertises" className="homeHeroPrimaryAction"><span>Découvrir nos expertises</span><ArrowIcon /></Link>
-            <Link href="/#contact" className="homeHeroSecondaryAction"><span>Parler à un consultant</span><ArrowIcon /></Link>
+            <Link href="/#expertises" className="homeHeroPrimaryAction"><span>Découvrir nos services</span><ArrowIcon /></Link>
+            <Link href="/contact" className="homeHeroSecondaryAction"><span>Parlons de vos besoins</span><ArrowIcon /></Link>
           </div>
         </div>
 

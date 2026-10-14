@@ -20,9 +20,9 @@ export default function Footer() {
 
         <div>
           <p className="footerTitle">Expertise</p>
-          <Link href="/en#recrutement">Recruitment</Link>
-          <Link href="/en#formation">Training</Link>
-          <Link href="/en#accompagnement">Consulting</Link>
+          <Link href="/en/recruitment">Recruitment</Link>
+          <Link href="/en/training">Training</Link>
+          <Link href="/en/consulting">Consulting</Link>
         </div>
 
         <div>
@@ -42,7 +42,7 @@ export default function Footer() {
 
       <div className="container footerBottom">
         <span>© {new Date().getFullYear()} ALTINDIS. All rights reserved.</span>
-        <span>Your Development Partner</span>
+        <Link href="/en/privacy">Privacy</Link>
       </div>
     </footer>
   );

@@ -1,11 +1,9 @@
+import { pageMetadata } from "@/lib/site";
 import type { Metadata } from "next";
 import SectionHeading from "@/components/SectionHeading";
 import Cta from "@/components/en/Cta";
 
-export const metadata: Metadata = {
-  title: "Training",
-  description: "Personalised training programmes focused on individual and team performance.",
-};
+export const metadata: Metadata = pageMetadata("/en/training", "en", "Training", "Personalised training programmes focused on individual and team performance.");
 
 const categories = [
   ["Management, Leadership & Effectiveness", "Leadership, change, team cohesion, conflict resolution, public speaking and time management."],

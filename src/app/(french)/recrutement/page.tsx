@@ -1,18 +1,16 @@
+import { pageMetadata } from "@/lib/site";
 import type { Metadata } from "next";
 import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
 import Cta from "@/components/Cta";
 import RecrutementHero from "@/components/RecrutementHero";
 
-export const metadata: Metadata = {
-  title: "Recrutement",
-  description: "ALTINDIS accompagne les organisations dans la recherche et l'évaluation des meilleurs talents — hauts dirigeants, managers, ingénieurs et cadres.",
-};
+export const metadata: Metadata = pageMetadata("/recrutement", "fr", "Recrutement", "ALTINDIS accompagne les organisations dans la recherche et l'évaluation des meilleurs talents — hauts dirigeants, managers, ingénieurs et cadres.");
 
 const steps = [
   ["01", "Analyse du besoin", "Compréhension du contexte, des enjeux stratégiques et des attentes spécifiques de l'organisation partenaire."],
   ["02", "Recherche ciblée", "Activation du réseau ALTINDIS et sourcing multicanal pour identifier les profils les plus pertinents."],
-  ["03", "Évaluation approfondie", "Entretiens structurés, assessment des compétences et vérification des références pour sécuriser la décision."],
+  ["03", "Évaluation approfondie", "Entretiens structurés, évaluation des compétences et vérification des références pour sécuriser la décision."],
   ["04", "Accompagnement", "Présentation des candidats retenus, soutien à la décision et suivi jusqu'à l'intégration dans le poste."],
 ] as const;
 
@@ -38,7 +36,7 @@ export default function RecruitmentPage() {
         <div className="container">
           <SectionHeading
             eyebrow="Notre processus"
-            title="Une démarche structurée, du brief au poste."
+            title="Une démarche structurée, de votre besoin à l’intégration."
             copy="Chaque mission suit une méthodologie éprouvée — de la compréhension du besoin jusqu'à l'intégration réussie du candidat."
           />
           <div className="processGrid">
@@ -75,7 +73,7 @@ export default function RecruitmentPage() {
             <article>
               <span className="featureNumber">03</span>
               <h3>Impact durable</h3>
-              <p>Des recrutements pensés pour les besoins uniques de l'organisation — avec un accompagnement qui garantit la pérennité de la collaboration.</p>
+              <p>Des recrutements pensés pour les besoins uniques de l'organisation — avec un accompagnement qui favorise une collaboration durable.</p>
             </article>
           </div>
         </div>
@@ -103,7 +101,7 @@ export default function RecruitmentPage() {
         <div className="container narrow">
           <p className="eyebrow">Une mission à nous confier ?</p>
           <h2>Parlez-nous du profil que vous recherchez.</h2>
-          <Link href="/contact" className="button">Lancer la discussion</Link>
+          <Link href="/contact" className="button">Parlons de vos besoins</Link>
         </div>
       </section>
 

@@ -3,15 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-
-const routes: Record<string, string> = {
-  "/": "/en",
-  "/recrutement": "/en/recruitment",
-  "/formation": "/en/training",
-  "/accompagnement": "/en/consulting",
-  "/contact": "/en/contact",
-  "/submit-cv": "/en/submit-cv",
-};
+import { languageRoutes as routes } from "@/lib/routes";
 
 function LanguageFlag({ english }: { english: boolean }) {
   return <span className="languageFlag" aria-hidden="true">

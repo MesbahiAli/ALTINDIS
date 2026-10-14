@@ -1,13 +1,11 @@
+import { pageMetadata } from "@/lib/site";
 import type { Metadata } from "next";
 import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
 import Cta from "@/components/en/Cta";
 import RecrutementHero from "@/components/en/RecrutementHero";
 
-export const metadata: Metadata = {
-  title: "Recruitment",
-  description: "ALTINDIS helps organisations find and assess outstanding executives, managers, engineers and professionals.",
-};
+export const metadata: Metadata = pageMetadata("/en/recruitment", "en", "Recruitment", "ALTINDIS helps organisations find and assess outstanding executives, managers, engineers and professionals.");
 
 const steps = [
   ["01", "Needs analysis", "Understand the partner organisation’s context, strategic challenges and specific expectations."],
@@ -103,7 +101,7 @@ export default function RecruitmentPage() {
         <div className="container narrow">
           <p className="eyebrow">Have a role to fill?</p>
           <h2>Tell us about the person you are looking for.</h2>
-          <Link href="/en/contact" className="button">Start a conversation</Link>
+          <Link href="/en/contact" className="button">Discuss your needs</Link>
         </div>
       </section>
 

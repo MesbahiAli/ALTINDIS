@@ -13,7 +13,7 @@ export default function References() {
   return (
     <section className="referencesBand" id="references" aria-labelledby="references-title">
       <div className="container">
-        <h2 className="referencesTitle" id="references-title">Trusted by</h2>
+        <h2 className="referencesTitle" id="references-title">Our clients</h2>
         <ul className="referencesGrid" aria-label="ALTINDIS client references">
           {logos.map((logo) => (
             <li className="referenceItem" key={logo.key}>

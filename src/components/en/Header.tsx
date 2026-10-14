@@ -6,16 +6,16 @@ import LanguageSwitch from "@/components/LanguageSwitch";
 import { useEffect, useRef, useState } from "react";
 
 const expertiseLinks = [
-  { href: "/en#recrutement", label: "Recruitment", description: "Find and attract people who make a difference." },
-  { href: "/en#formation", label: "Tailored training", description: "Develop skills your teams can use at work." },
+  { href: "/en/recruitment", label: "Recruitment", description: "Find and attract people who make a difference." },
+  { href: "/en/training", label: "Tailored training", description: "Develop skills your teams can use at work." },
   { href: "/en#diagnostics", label: "Studies & assessments", description: "Inform HR and organisational decisions." },
-  { href: "/en#accompagnement", label: "Project consulting", description: "Structure and support transformation projects." },
+  { href: "/en/consulting", label: "Project consulting", description: "Structure and support transformation projects." },
 ] as const;
 
 const primaryLinks = [
-  { href: "/en#recrutement", label: "Recruitment" },
-  { href: "/en#formation", label: "Training" },
-  { href: "/en#accompagnement", label: "Consulting" },
+  { href: "/en/recruitment", label: "Recruitment" },
+  { href: "/en/training", label: "Training" },
+  { href: "/en/consulting", label: "Consulting" },
   { href: "/en#a-propos", label: "About us" },
 ] as const;
 
@@ -87,8 +87,8 @@ export default function Header() {
             <div className="headerUtilityRight">
               <LanguageSwitch />
               <div className="headerActionPair">
-                <Link href="/en/contact" className="headerAction headerActionContact">Contact us <span><ChevronIcon /></span></Link>
-                <Link href="/en/submit-cv" className="headerAction headerActionCv">Submit CV <span><ChevronIcon /></span></Link>
+                <Link href="/en/contact" className="headerAction headerActionContact">Contact us <span><ArrowIcon /></span></Link>
+                <Link href="/en/submit-cv" className="headerAction headerActionCv">Submit CV <span><ArrowIcon /></span></Link>
               </div>
             </div>
           </div>
@@ -109,7 +109,7 @@ export default function Header() {
                   <p className="navDropdownEyebrow">Our expertise</p>
                   <div className="navDropdownGrid">
                     {expertiseLinks.map((link, index) => (
-                      <Link href={link.href} className="navDropdownLink" key={`${link.label}-${index}`}>
+                      <Link href={link.href} className="navDropdownLink" onClick={() => desktopMenuRef.current?.removeAttribute("open")} key={`${link.label}-${index}`}>
                         <span className="navDropdownIndex">0{index + 1}</span>
                         <span><strong>{link.label}</strong><small>{link.description}</small></span>
                         <ArrowIcon />
@@ -141,8 +141,8 @@ export default function Header() {
               <Link href={link.href} className="mobileNavLink" key={link.label} onClick={() => setMenuOpen(false)}><span>{link.label}</span><ArrowIcon /></Link>
             ))}
             <div className="headerActionPair mobileActionPair">
-              <Link href="/en/contact" className="headerAction headerActionContact" onClick={() => setMenuOpen(false)}>Contact us <span><ChevronIcon /></span></Link>
-              <Link href="/en/submit-cv" className="headerAction headerActionCv" onClick={() => setMenuOpen(false)}>Submit CV <span><ChevronIcon /></span></Link>
+              <Link href="/en/contact" className="headerAction headerActionContact" onClick={() => setMenuOpen(false)}>Contact us <span><ArrowIcon /></span></Link>
+              <Link href="/en/submit-cv" className="headerAction headerActionCv" onClick={() => setMenuOpen(false)}>Submit CV <span><ArrowIcon /></span></Link>
             </div>
           </nav>
         </div>

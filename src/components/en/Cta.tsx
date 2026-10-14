@@ -9,12 +9,12 @@ export default function Cta() {
           <Image src="/images/contact-casablanca-v2.png" alt="" fill sizes="(max-width: 640px) 100vw, 1240px" />
         </div>
         <div className="ctaCasablancaCopy">
-          <p className="eyebrow eyebrowLight">Let’s discuss your projects</p>
-          <h2>Let’s build your future success together</h2>
-          <p className="ctaCasablancaLead">Tell us about your recruitment, training or consulting needs, and let’s build the right solution together.</p>
+          <p className="eyebrow eyebrowLight">Contact ALTINDIS</p>
+          <h2>Let’s discuss your recruitment, training or consulting needs.</h2>
+          <p className="ctaCasablancaLead">Tell us about your priorities. We will help you identify the right next step.</p>
         <div className="ctaActions">
           <Link href="/en/contact" className="button buttonLight">
-            Let’s discuss your project <span aria-hidden="true">→</span>
+            Discuss your needs <span aria-hidden="true">→</span>
           </Link>
           <a href="mailto:Contact@Altindis.ma" className="textLink textLinkLight">
             Contact@Altindis.ma →

@@ -70,10 +70,10 @@ export default function HomeHero() {
             <span>for a Morocco</span>
             <span>moving forward.</span>
           </h1>
-          <p className="homeHeroLead">We develop the skills that help Moroccan organisations move forward sustainably.</p>
+          <p className="homeHeroLead">Recruitment, tailored training and consulting for organisations in Morocco.</p>
           <div className="homeHeroActions">
-            <Link href="/en#expertises" className="homeHeroPrimaryAction"><span>Explore our expertise</span><ArrowIcon /></Link>
-            <Link href="/en#contact" className="homeHeroSecondaryAction"><span>Speak to a consultant</span><ArrowIcon /></Link>
+            <Link href="/en#expertises" className="homeHeroPrimaryAction"><span>Explore our services</span><ArrowIcon /></Link>
+            <Link href="/en/contact" className="homeHeroSecondaryAction"><span>Discuss your needs</span><ArrowIcon /></Link>
           </div>
         </div>
 

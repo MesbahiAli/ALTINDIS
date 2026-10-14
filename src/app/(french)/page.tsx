@@ -1,3 +1,5 @@
+import { pageMetadata } from "@/lib/site";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import HomeHero from "@/components/HomeHero";
@@ -21,7 +23,7 @@ const expertisePillars = [
   },
   {
     icon: "diagnostics",
-    title: "Études & Diagnostics",
+    title: "Études & diagnostics",
     text: "Une analyse approfondie pour identifier les priorités et éclairer vos décisions organisationnelles.",
     id: "diagnostics",
     image: "/images/expertise-diagnostics-casablanca.png",
@@ -84,9 +86,9 @@ export default function HomePage() {
         <div className="homeSectionInner aboutInspiredInner">
           <div className="aboutOverviewHeading">
             <p className="eyebrow">À propos d’ALTINDIS</p>
-            <h2 id="about-overview-title">Un partenaire de confiance<br />pour vos enjeux humains</h2>
+            <h2 id="about-overview-title">Un partenaire de confiance<br />{" "}pour vos enjeux humains</h2>
             <p className="aboutInspiredDescription">Nous accompagnons les organisations dans leurs besoins de recrutement, de formation et de développement des compétences. Notre approche : comprendre vos réalités et construire avec vous des solutions adaptées, dans le respect de la confidentialité, de l’objectivité et du secret professionnel.</p>
-            <Link href="/#contact" className="aboutOverviewLink">Parlons de vos enjeux <span aria-hidden="true">→</span></Link>
+            <Link href="/contact" className="aboutOverviewLink">Parlons de vos besoins <span aria-hidden="true">→</span></Link>
           </div>
           <ul className="aboutInspiredValues" aria-label="Nos engagements">
             <li>
@@ -106,7 +108,7 @@ export default function HomePage() {
               <h3>Éthique</h3><p>Agir avec intégrité et déontologie</p>
             </li>
           </ul>
-          <blockquote className="aboutInspiredQuote">« Faire grandir<br />les talents pour un<br />Maroc plus fort. »<cite>Notre ambition</cite></blockquote>
+          <blockquote className="aboutInspiredQuote">« Faire grandir<br />{" "}les talents pour un<br />{" "}Maroc plus fort. »<cite>Notre ambition</cite></blockquote>
         </div>
       </section>
 
@@ -163,9 +165,9 @@ export default function HomePage() {
         <div className="homeSectionInner homeSectorsGrid">
           <div className="homeSectorsIntro">
             <p className="eyebrow">Secteurs d’activité</p>
-            <h2 id="home-sectors-title">Vos métiers.<br />Notre attention.</h2>
+            <h2 id="home-sectors-title">Vos métiers.<br />{" "}Notre attention.</h2>
             <p>Chaque secteur a ses exigences. Nous prenons le temps de comprendre votre environnement pour identifier les compétences dont vous avez besoin.</p>
-            <Link href="/contact" className="homeTrainingLink">Parlons de votre secteur <span aria-hidden="true">→</span></Link>
+            <Link href="/contact" className="homeTrainingLink">Parlons de vos besoins <span aria-hidden="true">→</span></Link>
           </div>
           <div className="homeSectorsCards">
             {sectorHighlights.map((sector) => (
@@ -204,16 +206,16 @@ export default function HomePage() {
       <section className="trainingApproach" id="notre-demarche" aria-labelledby="training-approach-title">
         <div className="homeSectionInner trainingApproachGrid">
           <div className="trainingApproachIntro">
-            <h2 id="training-approach-title">Notre démarche</h2>
+            <h2 id="training-approach-title">Notre démarche de formation</h2>
             <p>Les enjeux des actions de formation sont étroitement liés à la performance individuelle et collective.</p>
             <p>Une démarche centrée sur les besoins réels, la culture et les objectifs de nos partenaires, pour plus d’efficacité sur le long terme.</p>
           </div>
           <ol className="trainingApproachSteps">
             {[
-              ["Diagnostic préliminaire", "Focus sur les besoins réels, la culture et les objectifs fixés de nos partenaires."],
+              ["Diagnostic préliminaire", "Analyse des besoins réels, de la culture et des objectifs de votre organisation."],
               ["Ingénierie de formation", "Un accompagnement solide en amont pour plus d’efficacité sur le long terme."],
               ["Approche participative et personnalisée", "Tenant compte du contexte, des besoins et des contraintes du client."],
-              ["Méthodologie", "Des méthodes pédagogiques performantes, des recommandations justes et des plans d’actions réalistes et mesurables."],
+              ["Méthodologie", "Des méthodes pédagogiques performantes, des recommandations justes et des plans d’action réalistes et mesurables."],
             ].map(([title, description], index) => (
               <li key={title}>
                 <div className="trainingApproachNumber" aria-hidden="true"><span>{index + 1}</span></div>
@@ -228,3 +230,5 @@ export default function HomePage() {
     </>
   );
 }
+
+export const metadata: Metadata = pageMetadata("/", "fr", "Recrutement, Formation et Accompagnement", "ALTINDIS accompagne les organisations dans le recrutement des talents, la formation et le développement des compétences.");

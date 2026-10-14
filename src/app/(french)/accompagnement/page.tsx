@@ -1,11 +1,9 @@
+import { pageMetadata } from "@/lib/site";
 import type { Metadata } from "next";
 import SectionHeading from "@/components/SectionHeading";
 import Cta from "@/components/Cta";
 
-export const metadata: Metadata = {
-  title: "Accompagnement",
-  description: "ALTINDIS accompagne les projets d'investissement, de développement, de performance et de certification.",
-};
+export const metadata: Metadata = pageMetadata("/accompagnement", "fr", "Accompagnement", "ALTINDIS accompagne les projets d'investissement, de développement, de performance et de certification.");
 
 const areas = [
   ["Amélioration des performances", "Structurer les priorités et accompagner les démarches d’amélioration."],

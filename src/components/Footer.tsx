@@ -20,9 +20,9 @@ export default function Footer() {
 
         <div>
           <p className="footerTitle">Expertises</p>
-          <Link href="/#recrutement">Recrutement</Link>
-          <Link href="/#formation">Formation</Link>
-          <Link href="/#accompagnement">Accompagnement</Link>
+          <Link href="/recrutement">Recrutement</Link>
+          <Link href="/formation">Formation</Link>
+          <Link href="/accompagnement">Accompagnement</Link>
         </div>
 
         <div>
@@ -35,14 +35,14 @@ export default function Footer() {
         <div>
           <p className="footerTitle">Adresse</p>
           <p>59 Boulevard Zerktouni</p>
-          <p>6ème étage, 20360</p>
+          <p>6e étage, 20360</p>
           <p>Casablanca, Maroc</p>
         </div>
       </div>
 
       <div className="container footerBottom">
         <span>© {new Date().getFullYear()} ALTINDIS. Tous droits réservés.</span>
-        <span>Votre Partenaire de Développement</span>
+        <Link href="/confidentialite">Confidentialité</Link>
       </div>
     </footer>
   );

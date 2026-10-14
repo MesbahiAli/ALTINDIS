@@ -1,11 +1,9 @@
+import { pageMetadata } from "@/lib/site";
 import type { Metadata } from "next";
 import SectionHeading from "@/components/SectionHeading";
 import Cta from "@/components/en/Cta";
 
-export const metadata: Metadata = {
-  title: "Consulting",
-  description: "ALTINDIS supports investment, development, performance improvement and certification projects.",
-};
+export const metadata: Metadata = pageMetadata("/en/consulting", "en", "Consulting", "ALTINDIS supports investment, development, performance improvement and certification projects.");
 
 const areas = [
   ["Performance improvement", "Set priorities and support improvement initiatives."],

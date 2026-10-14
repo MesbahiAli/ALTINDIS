@@ -9,10 +9,12 @@ A clean Next.js / TypeScript website prepared from the ALTINDIS presentation and
 - `/formation` — Training
 - `/accompagnement` — Consulting / support
 - `/contact` — Contact details
+- `/submit-cv` — Applications
+- `/confidentialite` — Privacy information
 
 ## Run locally
 
-The header includes a FR / EN language switch. French remains the default; English pages are available at `/en`, `/en/recruitment`, `/en/training`, `/en/consulting`, `/en/contact`, and `/en/submit-cv`. Switching languages opens the matching page and preserves the current section anchor.
+The header includes a FR / EN language switch. French remains the default; English pages are available at `/en`, `/en/recruitment`, `/en/training`, `/en/consulting`, `/en/contact`, `/en/submit-cv`, and `/en/privacy`. Switching languages opens the matching page and preserves the current section anchor.
 
 French routes live in `src/app/(french)` and English routes in `src/app/(english)/en`. Both versions share the same stylesheet and images. English UI components live in `src/components/en`; keep their copy in sync when changing the French version.
 
@@ -39,7 +41,7 @@ Then open `http://localhost:3000`.
 2. Confirm which reference/client logos may be shown publicly.
 3. Replace or remove any copy that the client wants to update.
 4. Add privacy/legal pages if required.
-5. Connect a real contact form provider or backend if you want form submissions.
+5. Configure SMTP and Turnstile for direct contact/CV delivery. Until configured, forms prepare email drafts. See [DEPLOYMENT.md](DEPLOYMENT.md) and [.env.example](.env.example).
 6. Add analytics only after consent/privacy requirements are decided.
 
 ## Main brand variables
@@ -47,9 +49,9 @@ Then open `http://localhost:3000`.
 Edit `src/app/globals.css`:
 
 ```css
---brand: #2a2aa8;
---violet: #7e31e3;
---green: #2ada68;
+--brand: #342b89;
+--brand-deep: #111b3c;
+--brand-light: #eeedf8;
 ```
 
 ## Important

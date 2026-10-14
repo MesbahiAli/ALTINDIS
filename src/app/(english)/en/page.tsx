@@ -1,3 +1,5 @@
+import { pageMetadata } from "@/lib/site";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import HomeHero from "@/components/en/HomeHero";
@@ -21,7 +23,7 @@ const expertisePillars = [
   },
   {
     icon: "diagnostics",
-    title: "Studies & Assessments",
+    title: "Studies & assessments",
     text: "In-depth analysis to identify priorities and inform your organisational decisions.",
     id: "diagnostics",
     image: "/images/expertise-diagnostics-casablanca.png",
@@ -84,9 +86,9 @@ export default function HomePage() {
         <div className="homeSectionInner aboutInspiredInner">
           <div className="aboutOverviewHeading">
             <p className="eyebrow">About ALTINDIS</p>
-            <h2 id="about-overview-title">A trusted partner<br />for your people challenges</h2>
+            <h2 id="about-overview-title">A trusted partner<br />{" "}for your people challenges</h2>
             <p className="aboutInspiredDescription">We support organisations with recruitment, training and skills development. We take the time to understand your needs and build tailored solutions together, with confidentiality, objectivity and professional discretion.</p>
-            <Link href="/en#contact" className="aboutOverviewLink">Let’s discuss your challenges <span aria-hidden="true">→</span></Link>
+            <Link href="/en/contact" className="aboutOverviewLink">Discuss your needs <span aria-hidden="true">→</span></Link>
           </div>
           <ul className="aboutInspiredValues" aria-label="Our commitments">
             <li>
@@ -106,14 +108,14 @@ export default function HomePage() {
               <h3>Ethics</h3><p>Act with integrity and professional ethics</p>
             </li>
           </ul>
-          <blockquote className="aboutInspiredQuote">“Developing<br />talent for a<br />stronger Morocco.”<cite>Our ambition</cite></blockquote>
+          <blockquote className="aboutInspiredQuote">“Developing<br />{" "}talent for a<br />{" "}stronger Morocco.”<cite>Our ambition</cite></blockquote>
         </div>
       </section>
 
       <section className="expertiseOverview" id="expertises" aria-labelledby="expertise-overview-title">
         <div className="homeSectionInner">
           <div className="expertiseOverviewHeading">
-            <p className="eyebrow">Our expertise</p>
+            <p className="eyebrow">How we can help</p>
             <h2 className="expertiseOverviewTitle" id="expertise-overview-title">Solutions for your people challenges</h2>
             <p>An integrated approach to attracting, developing and supporting talent.</p>
           </div>
@@ -163,9 +165,9 @@ export default function HomePage() {
         <div className="homeSectionInner homeSectorsGrid">
           <div className="homeSectorsIntro">
             <p className="eyebrow">Industries</p>
-            <h2 id="home-sectors-title">Your business.<br />Our focus.</h2>
+            <h2 id="home-sectors-title">Your business.<br />{" "}Our focus.</h2>
             <p>Every industry has its own demands. We take the time to understand your environment and identify the skills you need.</p>
-            <Link href="/en/contact" className="homeTrainingLink">Let’s discuss your industry <span aria-hidden="true">→</span></Link>
+            <Link href="/en/contact" className="homeTrainingLink">Discuss your needs <span aria-hidden="true">→</span></Link>
           </div>
           <div className="homeSectorsCards">
             {sectorHighlights.map((sector) => (
@@ -204,7 +206,7 @@ export default function HomePage() {
       <section className="trainingApproach" id="notre-demarche" aria-labelledby="training-approach-title">
         <div className="homeSectionInner trainingApproachGrid">
           <div className="trainingApproachIntro">
-            <h2 id="training-approach-title">Our approach</h2>
+            <h2 id="training-approach-title">Our training approach</h2>
             <p>Training is closely linked to individual and team performance.</p>
             <p>An approach focused on our partners’ real needs, culture and goals, for lasting effectiveness.</p>
           </div>
@@ -228,3 +230,5 @@ export default function HomePage() {
     </>
   );
 }
+
+export const metadata: Metadata = pageMetadata("/en", "en", "Recruitment, Training and Consulting", "ALTINDIS supports organisations with recruitment, training and skills development.");

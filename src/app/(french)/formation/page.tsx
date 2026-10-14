@@ -1,11 +1,9 @@
+import { pageMetadata } from "@/lib/site";
 import type { Metadata } from "next";
 import SectionHeading from "@/components/SectionHeading";
 import Cta from "@/components/Cta";
 
-export const metadata: Metadata = {
-  title: "Formation",
-  description: "Des programmes de formation personnalisés autour des enjeux de performance individuelle et collective.",
-};
+export const metadata: Metadata = pageMetadata("/formation", "fr", "Formation", "Des programmes de formation personnalisés autour des enjeux de performance individuelle et collective.");
 
 const categories = [
   ["Management, Leadership & Efficacité", "Leadership, changement, cohésion d’équipe, gestion des conflits, prise de parole, gestion du temps."],
@@ -37,14 +35,14 @@ export default function TrainingPage() {
           <SectionHeading
             eyebrow="Notre approche"
             title="Du diagnostic aux recommandations mesurables."
-            copy="ALTINDIS associe diagnostic préliminaire, ingénierie de formation, personnalisation et méthodes pédagogiques orientées efficacité à long terme."
+            copy="ALTINDIS associe diagnostic préliminaire, ingénierie de formation, personnalisation et méthodes pédagogiques axées sur une efficacité durable."
           />
           <div className="processGrid">
             {[
-              ["01", "Diagnostic préliminaire", "Focus sur les besoins réels, la culture et les objectifs de nos partenaires."],
+              ["01", "Diagnostic préliminaire", "Analyse des besoins réels, de la culture et des objectifs de votre organisation."],
               ["02", "Approche personnalisée", "Tenant compte du contexte, des besoins et des contraintes du client."],
               ["03", "Ingénierie de formation", "Accompagnement solide en amont pour plus d’efficacité sur le long terme."],
-              ["04", "Plans d’actions mesurables", "Des méthodes pédagogiques performantes avec des recommandations justes et réalistes."],
+              ["04", "Plans d’action mesurables", "Des méthodes pédagogiques performantes avec des recommandations justes et réalistes."],
             ].map(([n, label, desc]) => (
               <div className="processCard" key={n}>
                 <span>{n}</span>
